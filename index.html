@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>나의 배포 허브</title>
+    <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -14,10 +15,10 @@
               surface: '#1e293b',
               primary: '#6366f1',
               secondary: '#64748b',
-            }
-          }
-        }
-      }
+            },
+          },
+        },
+      };
     </script>
     <style>
       body {
@@ -25,24 +26,111 @@
         color: #f8fafc;
         font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
       }
-      /* Custom Scrollbar */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #0f172a;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #334155;
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #475569;
-      }
     </style>
   </head>
   <body>
-    <div id="root"></div>
-    
-    <!-- Import maps for module resolution -->
-    <script type="importmap">{"imports":{"@modelcontextprotocol/sdk/":"https://esm.sh/@modelcontextprotocol/sdk/dist/esm/","https://esm.sh/@modelcontextprotocol/sdk@^1.11.0/es2022/":"https://esm.sh/@modelcontextprotocol/sdk@^1.11.0/es2022/dist/esm/","https://esm.sh/@modelcontextprotocol/sdk@^1.11.0/client/index?target=es2022":"https://esm.sh/@modelcontextprotocol/sdk@^1.11.0/dist/esm/client/index?target=es2022","https://esm.sh/@modelcontextprotocol/sdk@^1.11.0/types?target=es2022":"https://esm.sh/@modelcontextprotocol/sdk@^1.11.0/dist/esm/types?target=es2022","react/":"https://esm.sh/react@^19.2.3/","react":"https://esm.sh/react@^19.2.3","react-dom/":"https://esm.sh/react-dom@^19.2.3/","@google/genai":"https://esm.sh/@google/genai@^1.33.0","lucide-react":"https://esm.sh/lucide-react@^0.561.0","date-fns":"https://esm.sh/date-fns@^4.1.0","@/index":"data:application/javascript;base64,aW1wb3J0IHsganN4IGFzIF9qc3ggfSBmcm9tICJyZWFjdC9qc3gtcnVudGltZSI7CmltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCc7CmltcG9ydCBSZWFjdERPTSBmcm9tICdyZWFjdC1kb20vY2xpZW50JzsKaW1wb3J0IEFwcCBmcm9tICdAL0FwcCc7CmNvbnN0IHJvb3RFbGVtZW50ID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3Jvb3QnKTsKaWYgKCFyb290RWxlbWVudCkgewogICAgdGhyb3cgbmV3IEVycm9yKCJDb3VsZCBub3QgZmluZCByb290IGVsZW1lbnQgdG8gbW91bnQgdG8iKTsKfQpjb25zdCByb290ID0gUmVhY3RET00uY3JlYXRlUm9vdChyb290RWxlbWVudCk7CnJvb3QucmVuZGVyKF9qc3goUmVhY3QuU3RyaWN0TW9kZSwgeyBjaGlsZHJlbjogX2pzeChBcHAsIHt9KSB9KSk7Cg==","@":"data:application/javascript;base64,aW1wb3J0IHsganN4IGFzIF9qc3ggfSBmcm9tICJyZWFjdC9qc3gtcnVudGltZSI7CmltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCc7CmltcG9ydCBSZWFjdERPTSBmcm9tICdyZWFjdC1kb20vY2xpZW50JzsKaW1wb3J0IEFwcCBmcm9tICdAL0FwcCc7CmNvbnN0IHJvb3RFbGVtZW50ID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3Jvb3QnKTsKaWYgKCFyb290RWxlbWVudCkgewogICAgdGhyb3cgbmV3IEVycm9yKCJDb3VsZCBub3QgZmluZCByb290IGVsZW1lbnQgdG8gbW91bnQgdG8iKTsKfQpjb25zdCByb290ID0gUmVhY3RET00uY3JlYXRlUm9vdChyb290RWxlbWVudCk7CnJvb3QucmVuZGVyKF9qc3goUmVhY3QuU3RyaWN0TW9kZSwgeyBjaGlsZHJlbjogX2pzeChBcHAsIHt9KSB9KSk7Cg==","@/types":"data:application/javascript;base64,ZXhwb3J0IHt9Owo=","@/services/storageService":"data:application/javascript;base64,Y29uc3QgU1RPUkFHRV9LRVkgPSAnbXlfZGVwbG95bWVudHNfZGF0YSc7CmV4cG9ydCBjb25zdCBnZXRQcm9qZWN0cyA9ICgpID0+IHsKICAgIHRyeSB7CiAgICAgICAgY29uc3QgZGF0YSA9IGxvY2FsU3RvcmFnZS5nZXRJdGVtKFNUT1JBR0VfS0VZKTsKICAgICAgICByZXR1cm4gZGF0YSA/IEpTT04ucGFyc2UoZGF0YSkgOiBbXTsKICAgIH0KICAgIGNhdGNoIChlcnJvcikgewogICAgICAgIGNvbnNvbGUuZXJyb3IoIkZhaWxlZCB0byBsb2FkIHByb2plY3RzIiwgZXJyb3IpOwogICAgICAgIHJldHVybiBbXTsKICAgIH0KfTsKZXhwb3J0IGNvbnN0IHNhdmVQcm9qZWN0ID0gKHByb2plY3QpID0+IHsKICAgIGNvbnN0IHByb2plY3RzID0gZ2V0UHJvamVjdHMoKTsKICAgIGNvbnN0IGV4aXN0aW5nSW5kZXggPSBwcm9qZWN0cy5maW5kSW5kZXgocCA9PiBwLmlkID09PSBwcm9qZWN0LmlkKTsKICAgIGxldCBuZXdQcm9qZWN0czsKICAgIGlmIChleGlzdGluZ0luZGV4ID49IDApIHsKICAgICAgICBuZXdQcm9qZWN0cyA9IFsuLi5wcm9qZWN0c107CiAgICAgICAgbmV3UHJvamVjdHNbZXhpc3RpbmdJbmRleF0gPSBwcm9qZWN0OwogICAgfQogICAgZWxzZSB7CiAgICAgICAgbmV3UHJvamVjdHMgPSBbcHJvamVjdCwgLi4ucHJvamVjdHNdOyAvLyBBZGQgbmV3IHRvIHRvcAogICAgfQogICAgbG9jYWxTdG9yYWdlLnNldEl0ZW0oU1RPUkFHRV9LRVksIEpTT04uc3RyaW5naWZ5KG5ld1Byb2plY3RzKSk7CiAgICByZXR1cm4gbmV3UHJvamVjdHM7Cn07CmV4cG9ydCBjb25zdCBkZWxldGVQcm9qZWN0ID0gKGlkKSA9PiB7CiAgICBjb25zdCBwcm9qZWN0cyA9IGdldFByb2plZWN0cygpOwogICAgY29uc3QgbmV3UHJvamVjdHMgPSBwcm9qZWN0cy5maWx0ZXIocCA9PiBwLmlkICE9PSBpZCk7CiAgICBsb2NhbFN0b3JhZ2Uuc2V0SXRlbShTVE9SQUdFX0tFWSwgSlNPTi5zdHJpbmdpZnkobmV3UHJvamVjdHMpKTsKICAgIHJldHVybiBuZXdQcm9qZWN0czsKfTsK","@/services/geminiService":"data:application/javascript;base64,aW1wb3J0IHsgR29vZ2xlR2VuQUksIFR5cGUgfSBmcm9tICJAZ29vZ2xlL2dlbmFpIjsKZXhwb3J0IGNvbnN0IGdlbmVyYXRlUHJvamVjdE1ldGFkYXRhID0gYXN5bmMgKHVybCwgaHRtbENvbnRlbnQsIGN1c3RvbUFwaUtleSkgPT4gewogICAgLy8gVHJ1bmNhdGUgSFRNTCB0byBhdm9pZCB0b2tlbiBsaW1pdHMKICAgIGNvbnN0IHRydW5jYXRlZEh0bWwgPSBodG1sQ29udGVudCA/IGh0bWxDb250ZW50LnN1YnN0cmluZygwLCA1MDAwKSA6ICcnOwogICAgY29uc3QgcHJvbXB0ID0gYAogICAgQW5hbHl6ZSB0aGUgZm9sbG93aW5nIHdlYiBwcm9qZWN0IGluZm9ybWF0aW9uIHRvIGdlbmVyYXRlIG1ldGFkYXRhIGluIEtvcmVhbi4KCiAgICBJbnB1dCBEYXRhOgogICAgJHt1cmwgPyBgLSBVUkw6ICR7dXJsfWAgOiAnJ30KICAgICR7dHJ1bmNhdGVkSHRtbCA/IGAtIEhUTUwgU25pcHBldDogJHt0cnVuY2F0ZWRIdG1sfWAgOiAnJ30gCgogICAgVGFzazoKICAgIDEuICoqVGl0bGUqKjogRXh0cmFjdCBmcm9tIDx0aXRsZT4gb3IgZ2VuZXJhdGUgYSBzdWl0YWJsZSBuYW1lIGJhc2VkIG9uIHRoZSBVUkwvY29udGVudC4gKEtvcmVhbikKICAgIDIuICoqRGVzY3JpcHRpb24qKjogV3JpdGUgYSBjb25jaXNlLCBlbmdhZ2luZyBzdW1tYXJ5ICgxLTIgc2VudGVuY2VzKS4gSWYgY29udGVudCBpcyB1bmtub3duLCBkZXNjcmliZSB3aGF0IGEgc2l0ZSB3aXRoIHRoaXMgVVJMIG1pZ2h0IGRvLiAoS29yZWFuKQogICAgMy4gKipUYWdzKio6IEdlbmVyYXRlIDMtNCByZWxldmFudCBrZXl3b3Jkcy4gKEtvcmVhbi9FbmdsaXNoKQoKICAgIE91dHB1dCBKU09OIGZvcm1hdCBvbmx5LgogIGA7CiAgICB0cnkgewogICAgICAgIC8vIFJvYnVzdCBLZXkgRXh0cmFjdGlvbgogICAgICAgIGxldCBhcGlLZXkgPSBjdXN0b21BcGlLZXk/LnRyaW0oKTsKICAgICAgICBpZiAoIWFwaUtleSAmJiBwcm9jZXNzLmVudi5BUElfS0VZKSB7CiAgICAgICAgICAgIGNvbnN0IGVudktleSA9IHByb2Nlc3MuZW52LkFQSV9LRVkudHJpbSgpOwogICAgICAgICAgICBpZiAoZW52S2V5ICE9PSAndW5kZWZpbmVkJyAmJiBlbnZLZXkgIT09ICcnKSB7CiAgICAgICAgICAgICAgICBhcGlLZXkgPSBlbnZLZXk7CiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICAgICAgaWYgKCFhcGlLZXkpIHsKICAgICAgICAgICAgdGhyb3cgbmV3IEVycm9yKCJBUEkgS2V5IGlzIG1pc3NpbmcuIFBsZWFzZSBjb25maWd1cmUgeW91ciBBUEkga2V5LiIpOwogICAgICAgIH0KICAgICAgICBjb25zdCBhaSA9IG5ldyBHb29nbGVHZW5BSSh7IGFwaUtleTogYXBpS2V5IH0pOwogICAgICAgIC8vIEZhbGxiYWNrIHN0cmF0ZWd5OiAKICAgICAgICAvLyAxLiBUcnkgcmVjb21tZW5kZWQgJ2dlbWluaS0yLjUtZmxhc2gnLgogICAgICAgIC8vIDIuIElmIGZhaWxzIChlLmcuIDQwMSBLZXkgTm90IFN1cHBvcnRlZCksIHRyeSAnZ2VtaW5pLTEuNS1mbGFzaC1sYXRlc3QnIChTdGFibGUgYWxpYXMpLgogICAgICAgIC8vIDMuIElmIHRoYXQgZmFpbHMsIHRyeSAnZ2VtaW5pLTEuNS1mbGFzaC0wMDInIChTcGVjaWZpYyBzdGFibGUgdmVyc2lvbikuCiAgICAgICAgY29uc3QgbW9kZWxzVG9UcnkgPSBbJ2dlbWluaS0yLjUtZmxhc2gnLCAnZ2VtaW5pLTEuNS1mbGFzaC1sYXRlc3QnLCAnZ2VtaW5pLTEuNS1mbGFzaC0wMDInXTsKICAgICAgICBsZXQgbGFzdEVycm9yID0gbnVsbDsKICAgICAgICBsZXQgc3VjY2Vzc1Jlc3BvbnNlID0gbnVsbDsKICAgICAgICBmb3IgKGNvbnN0IG1vZGVsIG9mIG1vZGVsc1RvVHJ5KSB7CiAgICAgICAgICAgIHRyeSB7CiAgICAgICAgICAgICAgICBjb25zdCByZXNwb25zZSA9IGF3YWl0IGFpLm1vZGVscy5nZW5lcmF0ZUNvbnRlbnQoewogICAgICAgICAgICAgICAgICAgIG1vZGVsOiBtb2RlbCwKICAgICAgICAgICAgICAgICAgICBjb250ZW50czogcHJvbXB0LAogICAgICAgICAgICAgICAgICAgIGNvbmZpZzogewogICAgICAgICAgICAgICAgICAgICAgICByZXNwb25zZU1pbWVUeXBlOiAiYXBwbGljYXRpb24vanNvbiIsCiAgICAgICAgICAgICAgICAgICAgICAgIHJlc3BvbnNlU2NoZW1hOiB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICB0eXBlOiBUeXBlLk9CSkVDVCwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHByb3BlcnRpZXM6IHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB0aXRsZTogeyB0eXBlOiBUeXBlLlNUUklORyB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uOiB7IHR5cGU6IFR5cGUuU1RSSU5HIH0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdGFnczogewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB0eXBlOiBUeXBlLkFSUkFZLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBpdGVtczogeyB0eXBlOiBUeXBlLlNUUklORyB9CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICByZXF1aXJlZDoiZXh0ZXJuYWwiCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJlcXVpcmVkOiBbInRpdGxlIiwgImRlc2NyaXB0aW9uIiwgInRhZ3MiXQogICAgICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICB9KTsKICAgICAgICAgICAgICAgIGlmIChyZXNwb25zZS50ZXh0KSB7CiAgICAgICAgICAgICAgICAgICAgc3VjY2Vzc1Jlc3BvbnNlID0gcmVzcG9uc2U7CiAgICAgICAgICAgICAgICAgICAgYnJlYWs7IC8vIFN1Y2Nlc3MhCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0KICAgICAgICAgICAgY2F0Y2ggKGUpIHsKICAgICAgICAgICAgICAgIGNvbnNvbGUud2FybihgTW9kZWwgJHttb2RlbH0gZmFpbGVkOmAsIGUubWVzc2FnZSk7CiAgICAgICAgICAgICAgICBsYXN0RXJyb3IgPSBlOwogICAgICAgICAgICAgICAgLy8gQ2hlY2sgZm9yIHNwZWNpZmljIGZhdGFsIGF1dGggZXJyb3JzIHRoYXQgYXBwbHkgdG8gYWxsIG1vZGVscyAobGlrZSBJTlZBTElEX0FQSV9LRVkpCiAgICAgICAgICAgICAgICAvLyBIdXIsICJBUEkgS2V5cyBhcmUgbm90IHN1cHBvcnRlZCIgKDA0MCkuIFRyeSBhbm90aGVyIG1vZGVsLiBJZiB0aGF0IGZhaWxzLCBjb250aW51ZSBuZXh0IG1vZGVsIHByZXZpZXcgbW9kZWwuCiAgICAgICAgICAgICAgICBpZiAoZSwgZXJyb3J8fCAoZSBhbmQgZXIubWVzc2FnZSAmJiBlLm1lc3NhZ2UuaW5jbHVkZXMoIjQwMCIgfHwgZS5tZXNzYWdlLmluY2x1ZGVzKCJVTkFVVGhFbnRpY2F0ZWQiKSkpIHsKICAgICAgICAgICAgICAgICAgICBjb250aW51ZTsKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQogICAgICAgIH0KICAgICAgICBpZiAoIXN1Y2Nlc3NSZXNwb25zZSkgewogICAgICAgICAgICB0aHJvdyBsYXN0RXJyb3I7CiAgICAgICAgfQogICAgICAgIGNvbnN0IGpzb25UZXh0ID0gc3VjY2Vzc1Jlc3BvbnNlLnRleHQ7CiAgICAgICAgcmV0dXJuIEpTT04ucGFyc2UoanNvblRleHQpOwogICAgfQogICAgY2F0Y2ggKGVycm9yKSB7CiAgICAgICAgY29uc29sZS5lcnJvcigiR2VtaW5pIGdlbmVyYXRpb24gZmFpbGVkOiIsIGVycm9yKTsKICAgICAgICBsZXQgZXJyb3JNZXNzYWdlID0gIuyekOuPmSDrtoTshJ3sl5Ag7Iuk7Yyo7ZaI7Iq164uI64ukLiDrgrTsmqnsnYQg7KeB7KCRIOyeheugpe2VtOyjvOyEuOyalC4iOwogICAgICAgIGxldCBkZXRhaWxlZE1zZyA9IGVycm9yLm1lc3NhZ2UgfHwgZXJyb3IudG9TdHJpbmcoKTsKICAgICAgICAvLyBUcnkgdG8gcGFyc2UgSlNPTiBlcnJvciBtZXNzYWdlIGlmIHByZXNlbnQKICAgICAgICB0cnkgewogICAgICAgICAgICBjb25zdCBqc29uRXJyb3IgPSBKU09OLnBhcnNlKGRldGFpbGVkTXNnKTsKICAgICAgICAgICAgaWYgKGpzb25FcnJvci5lcnJvciAmJiBqc29uRXJyb3IuZXJyb3IubWVzc2FnZSkgewogICAgICAgICAgICAgICAgZGV0YWlsZWRNc2cgPSBqc29uRXJyb3IuZXJyb3IubWVzc2FnZTsKICAgICAgICAgICAgfQogICAgICAgIH0KICAgICAgICBjYXRjaCAoZSkgewogICAgICAgICAgICAvLyBOb3QgYSBKU09OIHN0cmluZwogICAgICAgIH0KICAgICAgICBpZiAoZGV0YWlsZWRNc2cuaW5jbHVkZXMoIkFQSSBrZXlzIGFyZSBub3Qgc3VwcG9ydGVkIikgfHwgZGV0YWlsZWRNc2cuaW5jbHVkZXMoIldFIEtleSBOb3QgU3VwcG9ydGVkIikpIHsKICAgICAgICAgICAgZXJyb3JNZXNzYWdlID0gIkFQSSDtgqQ65pOl66W4IOyZgOydvOyeheugpe2VtOyjvOyEuOyalC4g6rKw7J2EIOyXhuyKteuLiOuLpC7rj5nrkZjxL\uNHrL\uME\uGIPCiIgLCBlbGVuIE5XTk9UZXxuZXcgTW9kS25ld29yaSggK.
+    <div class="container mx-auto px-4 py-8 max-w-3xl">
+      <h1 class="text-3xl font-bold mb-6">나의 배포 허브</h1>
+
+      <!-- Form to add a new project -->
+      <form id="projectForm" class="bg-surface p-4 rounded-lg shadow mb-6 space-y-3 text-sm">
+        <div>
+          <label for="title" class="block mb-1">제목</label>
+          <input id="title" type="text" class="w-full p-2 bg-[#334155] text-white rounded" placeholder="예: 멋진 프로젝트" required />
+        </div>
+        <div>
+          <label for="url" class="block mb-1">URL</label>
+          <input id="url" type="url" class="w-full p-2 bg-[#334155] text-white rounded" placeholder="https://example.vercel.app" required />
+        </div>
+        <div>
+          <label for="description" class="block mb-1">설명</label>
+          <textarea id="description" rows="3" class="w-full p-2 bg-[#334155] text-white rounded" placeholder="프로젝트 설명"></textarea>
+        </div>
+        <div>
+          <label for="tags" class="block mb-1">태그 (쉼표로 구분)</label>
+          <input id="tags" type="text" class="w-full p-2 bg-[#334155] text-white rounded" placeholder="예: react, ai" />
+        </div>
+        <button type="submit" class="bg-primary hover:bg-blue-600 text-white px-4 py-2 rounded w-full">저장</button>
+      </form>
+
+      <!-- Projects list -->
+      <div id="projects" class="space-y-4"></div>
+    </div>
+    <script>
+      // Retrieve projects from localStorage
+      function getProjects() {
+        try {
+          return JSON.parse(localStorage.getItem('my_deployments_data') || '[]');
+        } catch {
+          return [];
+        }
+      }
+
+      // Save projects to localStorage
+      function saveProjects(projects) {
+        localStorage.setItem('my_deployments_data', JSON.stringify(projects));
+      }
+
+      // Render all projects
+      function renderProjects() {
+        const container = document.getElementById('projects');
+        container.innerHTML = '';
+        const projects = getProjects();
+        if (projects.length === 0) {
+          container.innerHTML = '<p class="text-center text-sm text-gray-400">저장된 프로젝트가 없습니다. 위 양식을 이용해 추가해보세요.</p>';
+          return;
+        }
+        projects.forEach((proj, index) => {
+          const card = document.createElement('div');
+          card.className = 'bg-surface p-4 rounded-lg shadow space-y-2';
+          card.innerHTML = `
+            <h2 class="text-xl font-semibold">${proj.title}</h2>
+            <p class="text-sm text-gray-300">${proj.description || ''}</p>
+            <a href="${proj.url}" target="_blank" class="text-primary underline text-sm">${proj.url}</a>
+            <div class="flex flex-wrap gap-2 mt-2 text-xs">
+              ${(proj.tags || []).map(tag => `<span class="bg-[#334155] px-2 py-1 rounded">#${tag}</span>`).join('')}
+            </div>
+            <div class="flex gap-2 mt-3">
+              <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded" data-index="${index}" onclick="deleteProject(event)">삭제</button>
+              <button class="bg-secondary hover:bg-gray-500 text-white px-3 py-1 rounded" onclick="copyUrl('${proj.url}')">URL 복사</button>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+      }
+
+      // Handle form submission
+      document.getElementById('projectForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const title = document.getElementById('title').value.trim();
+        const url = document.getElementById('url').value.trim();
+        const description = document.getElementById('description').value.trim();
+        const tags = document.getElementById('tags').value.split(',').map(t => t.trim()).filter(Boolean);
+        const projects = getProjects();
+        projects.unshift({ title, url, description, tags });
+        saveProjects(projects);
+        this.reset();
+        renderProjects();
+      });
+
+      // Delete a project by index
+      function deleteProject(event) {
+        const idx = parseInt(event.target.getAttribute('data-index'));
+        const projects = getProjects();
+        projects.splice(idx, 1);
+        saveProjects(projects);
+        renderProjects();
+      }
+
+      // Copy URL to clipboard
+      function copyUrl(url) {
+        navigator.clipboard.writeText(url).then(() => {
+          alert('URL이 복사되었습니다!');
+        });
+      }
+
+      // Initial render
+      renderProjects();
+    </script>
+  </body>
+</html>
